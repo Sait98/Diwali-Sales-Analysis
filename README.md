@@ -88,7 +88,7 @@ sales_state = df.groupby(['Product_ID'], as_index=False)['Orders'].sum().sort_va
 
 sns.set(rc={'figure.figsize':(20,5)})
 sns.barplot(data = sales_state, x = 'Product_ID',y= 'Orders')
-# top 10 most sold products (same thing as above)
+# top 10 most sold products
 
 fig1, ax1 = plt.subplots(figsize=(12,7))
 df.groupby('Product_ID')['Orders'].sum().nlargest(10).sort_values(ascending=False).plot(kind='bar')
